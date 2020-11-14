@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-
+using Rover.ConsoleApplication.Extensions;
 namespace Rover.ConsoleApplication.Input
 {
     public class GridInput
@@ -18,10 +18,7 @@ namespace Rover.ConsoleApplication.Input
             int[] gridDimensionArrayAsInt = new int[stringArray.Length];
             for ( int i = 0; i < stringArray.Length; i++ )
             {
-                int parseValue;
-
-                if ( int.TryParse(stringArray[i], out parseValue) )
-                    gridDimensionArrayAsInt[i] = parseValue;
+                gridDimensionArrayAsInt[i] = stringArray[i].ToInt();
             }
             return gridDimensionArrayAsInt;
         }
